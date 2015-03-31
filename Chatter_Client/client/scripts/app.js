@@ -2,7 +2,7 @@
 
   window.app = {
     existingRooms:['lobby'],
-    server: 'http://127.0.0.1:3000/',
+    server: 'http://127.0.0.1:3000/', // change to new server address
     init: function(){
 
     },
