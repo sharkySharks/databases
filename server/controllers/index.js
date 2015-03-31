@@ -12,7 +12,7 @@ module.exports = {
     		if (err) {
     			throw err;
     		} else {
-    		  res.json(results); //why call json on res?
+    		  res.json(results); 
     		}
     	});
     });
@@ -35,10 +35,48 @@ module.exports = {
   users: {
     // Ditto as above
     get: function (req, res) {
-
+    	models.users.get(function(err, results){
+    		if (err) {
+    			throw err;
+    		} else {
+    		  res.json(results);
+    		}
+    	})
     },
     post: function (req, res) {
+    	var params = [ req.body[username] ];
 
+    	models.users.post(params, function(err, results){
+    		if (err) {
+    			throw err;
+    		} else {
+    		  res.json(results);
+    		}
+    	})
+    }
+  },
+
+  rooms: {
+    // Ditto as above
+    get: function (req, res) {
+    	models.rooms.get(function(err, results){
+    		if (err) {
+    			throw err;
+    		} else {
+    		  res.json(results);
+    		}
+    	})
+    },
+    post: function (req, res) {
+    	var params = [ req.body[roomname] ];
+
+    	models.rooms.post(params, function(err, results){
+    		if (err) {
+    			throw err;
+    		} else {
+    		  res.json(results);
+    		}
+    	})
     }
   }
 };

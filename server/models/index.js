@@ -51,6 +51,28 @@ module.exports = {
         callback(data);
       })
     }
+  },
+
+  rooms: {
+    // Ditto as above.
+    get: function (callback) {
+      var qString = 'select * from rooms';
+      db.query(qString, function(err, data){
+        if (err) {
+          callback(err);
+        } else {
+          callback(data);
+        }
+      });
+    },
+
+    post: function (params, callback) {
+      var qString = 'insert into rooms(room_name) values (?)';
+      db.query(qString, function(err, data){
+        if (err) throw err;
+        callback(data);
+      })
+    }
   }
 };
 
