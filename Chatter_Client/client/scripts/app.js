@@ -2,7 +2,7 @@
 
   window.app = {
     existingRooms:['lobby'],
-    server: 'http://127.0.0.1:3000/', // change to new server address
+    server: 'http://127.0.0.1:3000/', 
     init: function(){
 
     },
@@ -29,6 +29,7 @@
         type: 'GET',
         contentType: 'application/json',
         success: function (data) {
+          // debugger;
           console.log(data)
           
           app.populateMessages(data)

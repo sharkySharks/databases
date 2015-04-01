@@ -1,6 +1,7 @@
 var models = require('../models');
 var bluebird = require('bluebird');
 
+
 var userFields =['username'];
 var messageFields = ['username', 'text', 'roomname'];
 
@@ -12,12 +13,11 @@ module.exports = {
     		if (err) {
     			throw err;
     		} else {
-    		  res.json(results); 
+    		  res.status(200).send(JSON.stringify(results)); 
     		}
     	});
-    });
 
-    }, // a function which handles a get request for all messages
+  	}, // a function which handles a get request for all messages
     	// calls method from the model to send data to the database
     post: function (req, res) {
     	var params = [req.body[text], req.body[username], req.body[roomname]];

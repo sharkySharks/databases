@@ -22,7 +22,7 @@ app.use(parser.json());
 app.use("/classes", router);
 
 // Serve the client files
-app.use(express.static(__dirname + "/../chatter_client/client"));
+app.use(express.static(__dirname + "/../Chatter_Client/client"));
 
 //app.post('', function(req, res){})
 

@@ -27,7 +27,6 @@ CREATE TABLE rooms (
 	, 	PRIMARY KEY (room_id)
   
 );
-/* Create other tables and define schemas for them here! */
 
 
 
